@@ -34,6 +34,16 @@ def matrix_create(matrix_hight):
         matrix.append(string1)
     return matrix
 
+# Функция для сложения двух матриц
+
+def matrix1_plus_matrix2(matrix1,matrix2):
+    matrix3 = []
+    for i, row in enumerate(matrix1):
+        r = []
+        for j, x in enumerate(row):
+            r.append(x + matrix2[i][j])
+        matrix3.append(r)
+    return matrix3
 
 matrix_hight1 = int(input("Введите количество строк в первой матрице: "))
 print("""Введите первую матрицу в формате:
@@ -47,17 +57,8 @@ matrix_hight2 = int(input("Введите количество строк во �
 print("Введите вторую матрицу:")
 matrix2 = matrix_create(matrix_hight2)
 
-print(matrix1)
-print(matrix2)
+matrix3 = matrix1_plus_matrix2(matrix1, matrix2)
+print("Первая матрица: ", matrix1)
+print("Вторая матрица", matrix2)
+print("Сумма матриц: ", matrix3)
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
