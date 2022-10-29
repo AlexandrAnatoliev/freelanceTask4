@@ -72,11 +72,21 @@ def square_matrix_transpose(matrix):
     return matrix_transpose
 
 
+# Функция для транспонирования матрицы
+def matrix_transpose(matrix):
+    matrix_transpose = []
+    for j in range(len(matrix[0])):
+        row = []
+        for i in range(len(matrix)):
+            row.append(matrix[i][j])
+        matrix_transpose.append(row)
+    return matrix_transpose
+
 matrix_hight1 = int(input("Введите количество строк в первой матрице: "))
 print("""Введите первую матрицу в формате:
     1 2 3
     4 5 6
-    7 8 9
+    ...
     """)
 matrix1 = matrix_create(matrix_hight1)
 
@@ -86,8 +96,8 @@ matrix2 = matrix_create(matrix_hight2)
 
 matrix3 = matrix1_plus_matrix2(matrix1, matrix2)
 matrix4 = matrix1_minus_matrix2(matrix1, matrix2)
-matrix1_tr = square_matrix_transpose(matrix1)
-matrix2_tr = square_matrix_transpose(matrix2)
+matrix1_tr = matrix_transpose(matrix1)
+matrix2_tr = matrix_transpose(matrix2)
 
 print("Первая матрица: ", matrix1)
 print("Вторая матрица", matrix2)
