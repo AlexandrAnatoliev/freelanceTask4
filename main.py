@@ -34,9 +34,10 @@ def matrix_create(matrix_hight):
         matrix.append(string1)
     return matrix
 
+
 # Функция для сложения двух матриц
 
-def matrix1_plus_matrix2(matrix1,matrix2):
+def matrix1_plus_matrix2(matrix1, matrix2):
     matrix3 = []
     for i, row in enumerate(matrix1):
         r = []
@@ -44,6 +45,19 @@ def matrix1_plus_matrix2(matrix1,matrix2):
             r.append(x + matrix2[i][j])
         matrix3.append(r)
     return matrix3
+
+
+# Функция для вычитания двух матриц
+
+def matrix1_minus_matrix2(matrix1, matrix2):
+    matrix3 = []
+    for i, row in enumerate(matrix1):
+        r = []
+        for j, x in enumerate(row):
+            r.append(x - matrix2[i][j])
+        matrix3.append(r)
+    return matrix3
+
 
 matrix_hight1 = int(input("Введите количество строк в первой матрице: "))
 print("""Введите первую матрицу в формате:
@@ -58,7 +72,9 @@ print("Введите вторую матрицу:")
 matrix2 = matrix_create(matrix_hight2)
 
 matrix3 = matrix1_plus_matrix2(matrix1, matrix2)
+matrix4 = matrix1_minus_matrix2(matrix1, matrix2)
+
 print("Первая матрица: ", matrix1)
 print("Вторая матрица", matrix2)
 print("Сумма матриц: ", matrix3)
-
+print("Разность матриц", matrix4)
