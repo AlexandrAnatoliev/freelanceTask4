@@ -11,7 +11,6 @@
 # 1 0 1
 # 0 1 1 => [[1,0,1],[0,1,1],[1,1,1]]
 # 1 1 1
-
 def square_matrix_create():
     string1 = list(map(float, input().split()))  # считываем первую строку матрицы
     matrix_size = len(string1)  # вычисляем размер матрицы
@@ -25,7 +24,6 @@ def square_matrix_create():
 
 
 # Функция для создания матрицы произвольного размера
-
 def matrix_create(matrix_hight):
     matrix = []
     # Создаем матрицу
@@ -36,7 +34,6 @@ def matrix_create(matrix_hight):
 
 
 # Функция для сложения двух матриц
-
 def matrix1_plus_matrix2(matrix1, matrix2):
     matrix3 = []
     for i, row in enumerate(matrix1):
@@ -48,7 +45,6 @@ def matrix1_plus_matrix2(matrix1, matrix2):
 
 
 # Функция для вычитания двух матриц
-
 def matrix1_minus_matrix2(matrix1, matrix2):
     matrix3 = []
     for i, row in enumerate(matrix1):
@@ -60,7 +56,6 @@ def matrix1_minus_matrix2(matrix1, matrix2):
 
 
 # Функция для транспонирования матрицы (поменять значения столбцов и строк местами) - работает только для квадр матрицы
-
 def square_matrix_transpose(matrix):
     matrix_transpose = []
     for i in range(len(matrix)):
@@ -82,6 +77,18 @@ def matrix_transpose(matrix):
         matrix_transpose.append(row)
     return matrix_transpose
 
+
+# функция для умножения матрицы на число
+def matrix_number_multiplication(matrix, number):
+    matrix_number_multiplication = []
+    for i, row in enumerate(matrix):
+        r = []
+        for j, x in enumerate(row):
+            r.append(x * number)
+        matrix_number_multiplication.append(r)
+    return matrix_number_multiplication
+
+
 matrix_hight1 = int(input("Введите количество строк в первой матрице: "))
 print("""Введите первую матрицу в формате:
     1 2 3
@@ -94,10 +101,13 @@ matrix_hight2 = int(input("Введите количество строк во �
 print("Введите вторую матрицу:")
 matrix2 = matrix_create(matrix_hight2)
 
+number = float(input("Введите число, на которое нужно умножить матрицу: "))
 matrix3 = matrix1_plus_matrix2(matrix1, matrix2)
 matrix4 = matrix1_minus_matrix2(matrix1, matrix2)
 matrix1_tr = matrix_transpose(matrix1)
 matrix2_tr = matrix_transpose(matrix2)
+matrix1_number_mult = matrix_number_multiplication(matrix1, number)
+matrix2_number_mult = matrix_number_multiplication(matrix2, number)
 
 print("Первая матрица: ", matrix1)
 print("Вторая матрица", matrix2)
@@ -105,3 +115,5 @@ print("Сумма матриц: ", matrix3)
 print("Разность матриц", matrix4)
 print("Транспонированная первая матрица", matrix1_tr)
 print("Транспонированная вторая матрица", matrix2_tr)
+print("Результат умножения первой матрицы и множителя: ", matrix1_number_mult)
+print("Результат умножения второй матрицы и множителя: ", matrix2_number_mult)
