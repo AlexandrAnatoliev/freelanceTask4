@@ -59,9 +59,9 @@ def matrix1_minus_matrix2(matrix1, matrix2):
     return matrix3
 
 
-# Функция для транспонирования матрицы (поменять значения столбцов и строк местами)
+# Функция для транспонирования матрицы (поменять значения столбцов и строк местами) - работает только для квадр матрицы
 
-def matrix_transpose(matrix):
+def square_matrix_transpose(matrix):
     matrix_transpose = []
     for i in range(len(matrix)):
         row = matrix[i][:]  # Можно создать копию списка,но не копию вложенного списка!
@@ -86,8 +86,8 @@ matrix2 = matrix_create(matrix_hight2)
 
 matrix3 = matrix1_plus_matrix2(matrix1, matrix2)
 matrix4 = matrix1_minus_matrix2(matrix1, matrix2)
-matrix1_tr = matrix_transpose(matrix1)
-matrix2_tr = matrix_transpose(matrix2)
+matrix1_tr = square_matrix_transpose(matrix1)
+matrix2_tr = square_matrix_transpose(matrix2)
 
 print("Первая матрица: ", matrix1)
 print("Вторая матрица", matrix2)
