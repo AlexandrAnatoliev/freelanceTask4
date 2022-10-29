@@ -15,24 +15,37 @@
 def square_matrix_create():
     string1 = list(map(float, input().split()))  # считываем первую строку матрицы
     matrix_size = len(string1)  # вычисляем размер матрицы
-    matrix1 = []
-    matrix1.append(string1)
+    matrix = []
+    matrix.append(string1)
     # Создаем матрицу
     for i in range(matrix_size - 1):
         string1 = list(map(float, input().split()))
-        matrix1.append(string1)
-    return matrix1
+        matrix.append(string1)
+    return matrix
 
 
+# Функция для создания матрицы произвольного размера
+
+def matrix_create(matrix_hight):
+    matrix = []
+    # Создаем матрицу
+    for i in range(matrix_hight):
+        string1 = list(map(float, input().split()))
+        matrix.append(string1)
+    return matrix
+
+
+matrix_hight1 = int(input("Введите количество строк в первой матрице: "))
 print("""Введите первую матрицу в формате:
     1 2 3
     4 5 6
     7 8 9
     """)
-matrix1 = square_matrix_create()
+matrix1 = matrix_create(matrix_hight1)
 
+matrix_hight2 = int(input("Введите количество строк во второй матрице: "))
 print("Введите вторую матрицу:")
-matrix2 = square_matrix_create()
+matrix2 = matrix_create(matrix_hight2)
 
 print(matrix1)
 print(matrix2)
