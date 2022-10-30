@@ -140,4 +140,9 @@ mat_eq = matrix_create(2)  # матрица с коэффициентами си
 det = determinant(mat_eq[0][0], mat_eq[0][1], mat_eq[1][0], mat_eq[1][1])  # главный определитель
 det_x = determinant(mat_eq[0][2], mat_eq[0][1], mat_eq[1][2], mat_eq[1][1])  # вспомогательный определитель
 det_y = determinant(mat_eq[0][0], mat_eq[0][2], mat_eq[1][0], mat_eq[1][2])  # вспомогательный определитель
-print(mat_eq, det, det_x, det_y)
+
+# искомое решение системы двух линейных уранений методом Крамера
+x = det_x/det
+y = det_y/det
+
+print(f"Искомое решение системы линейных уравнений x = {x}, y = {y}")
